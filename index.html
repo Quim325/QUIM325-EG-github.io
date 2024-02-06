@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/example.css">
+  <link rel="stylesheet" href="SlidingMenu.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="SlidingMenu.js"></script>
+  <script src="App.js"></script>
+  <script>
+    $(window).on('load', function() {
+
+      var $menu = $('.menu-example-id-1');
+      var $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items
+      });
+
+      $menu = $('.menu-example-id-2');
+      $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items,
+        'duration': 300,
+        'slidingClass': 'type-line'
+      });
+
+      $menu = $('.menu-example-id-3');
+      $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items,
+        'slidingClass': 'type-color-green'
+      });
+
+      $menu = $('.menu-example-id-4');
+      $items = $menu.find('.menu-example__item');
+      new SlidingMenu({
+        'menu': $menu,
+        'items': $items,
+        'duration': 200,
+        'slidingClass': 'type-color-purple',
+        'direction': 'y'
+      },
+      {
+        'over': over,
+        'leave': leave
+      });
+
+      function over(current, data) {
+        $(data.options.items).removeClass('active');
+        $(current).addClass('active');
+      }
+
+      function leave(current, data) {
+        $(data.options.items).removeClass('active');
+        $(data.itemActive).addClass('active');
+      }
+
+      var $jsFromGithub = $('.js-form-github');
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 200) {
+          $jsFromGithub.stop().animate({
+            'bottom': 0
+          }, 200);
+        } else {
+          $jsFromGithub.stop().animate({
+            'bottom': -65
+          }, 200);
+        }
+      });
+
+    });
+  </script>
+</head>
+<body>
+<div class="wrapper">
+  <a href="index.html" class="logo">Ahora Contigo... 2024</a>
+
+
+  <h2 class="content-title"><span class="content-title-inner">Noticias...!!</span></h2>
+  <nav class="menu-example menu-example-id-1">
+
+    
+    <ul>
+      <li>
+        <a href="Suena EG 3D/index.html" class="menu-example__item active">Suena EG</a>
+      </li>
+      <!-- <li>
+        <a href="#" class="menu-example__item">Shop</a>
+      </li>-->
+      <li>
+        <a href="Populares/index.html" class="menu-example__item">Populares</a>
+      </li>
+      <li>
+        <a href="TicTacToe Game/index.html" class="menu-example__item">Game</a>
+      </li>
+      <li>
+        <b< href="#" class="menu-example__item">Spam</b></a>
+      </b<>
+    </ul>
+  </nav>
+
+
+
+  <h2 class="content-title"><span class="content-title-inner">Emprende Con nosotros</span></h2>
+  <nav class="menu-example menu-example-id-2">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item">Promociones</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item active">Shopping</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Black Deal</a>
+      </li>
+     <!--  <li>
+        <a href="#" class="menu-example__item">Gift Cards</a>
+      </li>-->
+      <li>
+        <a href="contact-us.html" class="menu-example__item">Contactar</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <h2 class="content-title"><span class="content-title-inner">Publicaciones</span></h2>
+  <nav class="menu-example menu-example-id-3">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item">Libros</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Podcast</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Blogs</a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item">Arte</a>
+      </li>
+     <!-- <li>
+        <a href="#" class="menu-example__item">Contacts</a>
+      </li>-->
+    </ul>
+  </nav>
+
+  <h2 class="content-title"><span class="content-title-inner">Ahoara contigo<br> Somos Noticia</span></br<>
+  <nav class="menu-example menu-example-id-4">
+    <ul>
+      <li>
+        <a href="#" class="menu-example__item active"><i class="fa fa-2x fa-home"></i></a>
+      </li>
+      <li>
+        <a href="#" class="menu-example__item"><i class="fa fa-2x fa-shopping-bag"></i></a>
+      </li>
+      <li>
+        <a href="New year countdown/index.html" class="menu-example__item"><i class="fa fa-2x fa-plane"></i></a>
+      </li>
+      <li>
+        <a href="Counter/index.html" class="menu-example__item"><i class="fa fa-2x fa-gift"></i></a>
+      </li>
+      <li>
+        <a href="contact-us.html" class="menu-example__item"><i class="fa fa-2x fa-phone-square"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+
+  <h2 class="content-title"><span class="content-title-inner">Descubre + Contenido</span></h2>
+  <ul class="options-list">
+    <!--<li>
+      <div class="desc">1. Copa Africa 2024</div>
+    </li>-->
+  <!--  <li>
+      <div class="desc">2. Include SlidingMenu files (js and css)</div>
+    </li>
+    <li>
+      <div class="desc">3. Create SlidingMenu with your options after window load</div>
+    </li>-->
+  </ul>
+
+<div class="code">
+<pre>
+
+  <img src="https://ahoraeg.com/wp-content/uploads/2022/06/nzalang2.jpg" alt="" class="now3">
+</pre>
+</div>
+
+  <h2 class="content-title"><span class="content-title-inner"><a href="leer.html">Leer mas...</a></span></h2>
+  <!--<h3 class="content-title-level2"><span class="content-title-inner ">Required</span></h3>-->
+  <ul class="options-list">
+  <!--  <li>
+      <div class="option mark required">menu</div>
+      <div class="desc">&mdash; Wrapper items menu (jQuery object)</div>
+    </li>
+    <li>
+      <div class="option mark required">items</div>
+      <div class="desc">&mdash; Items menu (jQuery object)</div>
+    </li>--->
+  </ul>
+  <h3 class="content-title-level2"><span class="content-title-inner">En Venta</span></h3>
+  <ul class="options-list">
+   <!--- <li>
+      <div class="option mark not-required">itemActiveClass</div>
+      <div class="desc">&mdash; Active class current item menu (String). <span class="default">Default: 'active'</span>
+      </div>
+    </li>
+    <li>
+      <div class="option mark not-required">slidingClass</div>
+      <div class="desc">&mdash; Custom class sliding element (String). <span class="default">Default: ' '</span>
+      </div>
+    </li>
+    <li>
+      <div class="option mark not-required">direction</div>
+      <div class="desc">&mdash; Direction float sliding 'x' or 'y' (String). <span class="default">Default: 'x'</span>
+      </div>
+    </li>
+    <li>
+      <div class="option mark not-required">duration</div>
+      <div class="desc">&mdash; duration animation in mc (Number). <span class="default">Default: 400</span>
+      </div>
+    </li>-->
+  </ul>
+
+<div class="code">
+<pre>
+  
+<img src="https://octane.rent/wp-content/uploads/2023/10/chevrolet-captiva-black-14-600x400.webp" alt="" class="noww2">
+
+</pre>
+</div>
+
+  <h2 class="content-title"><span class="content-title-inner"><a href="leer.html">Leer mas</a></span></h2>
+  <ul class="options-list">
+    <li>
+      <div class="option mark not-required" id="bam">EG Bro Express</div>
+      <div class="desc" id="desc2">&mdash; Envía y recibe dinero en menos de 5 minutos </div>
+    </li>
+    <li>
+      <div class="option mark not-required" id="yaoh"><a href="#">Click here</a></div>
+      <div class="desc" id="desc">&mdash; Know More About EG Bro</div>
+    </li>
+  </ul>
+<div class="code">
+<pre>
+
+  <img src="jay-3.jpg" alt="" class="noww">
+
+
+  <!-- $(window).on('load', function() {
+
+  var $menu = $('.menu-example-id-1');
+  var $items = $menu.find('.menu-example__item');
+  new SlidingMenu({
+    'menu': $menu,
+    'items': $items,
+  },
+  {
+    'over': over,
+    'leave': leave
+  });
+
+  function over(current, data) {
+    console.log('hover menu items')
+  }
+
+  function leave(current, data) {
+    console.log('leave menu')
+  }
+
+});-->
+</pre>
+</div>
+
+<select class="">
+ 
+</select>
+
+<section class="sec-1 show-animate">
+  <h1 class="Animate">Ecuacelebs...</h1>
+  <p class="Animate"> Ahora con Hugo en EG Noticias... te ofrecemos mas contenido.</p>
+  <a href="">Hacer Click Aqui...!!😎</a>
+</section>
+
+<section class="sec-2">
+  <h1 class="Animate">Conectamos Contigo...</h1>
+  <p class="Animate"> Ahora en EG Noticias... descarga, guarda y escucha en redifusión tus mejores podcats, programas y articulos.</p>
+  <a href="">Hacer Click Aqui...!!😎</a>
+</section>
+
+<section class="sec-3">
+  <h1 class="Animate">Asonga rtv...</h1>
+  <p class="Animate"> Tu emisora favorita, tardes especiales con Sandra FM desde Asonga radio.<br> Música a la carta, entre sabanas...<br> conectando contigo!!</p>
+  <a href="">Hacer Click Aqui...!!😎</a>
+</section>
+
+<section class="sec-4">
+  <h1 class="Animate">Ponte al Día...</h1>
+  <p class="Animate"> Todo en uno... lo sabes tú = lo saben todos😅😍😍😊</p>
+  <a href="">Hacer Click Aqui...!!😎</a>
+</section>
+
+<section class="sec-5">
+           <div class="images">
+            <img src="images/Black1.jpeg" alt="">
+            <img src="images/Black2.png" alt="">
+            <img src="images/Black3.jpg" alt="">
+            
+           </div>
+</section>
+
+  <a href="#" target="_blank" class="from-github js-form-github"><i class="fa fa-github"></i>EG...Ahora Contigo</a>
+</div>
+
+
+
+
+</body>
+</html>

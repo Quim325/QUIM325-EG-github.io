@@ -1,0 +1,261 @@
+:root {
+  --nav-height: 60px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: serif;
+  --primary-color: #2c2c2c;
+  --color-body: #f3f3f3;
+  --color-text: #343434;
+}
+
+body {
+  margin: 0;
+  background: rgb(2,0,36);
+  background: linear-gradient(350deg, rgba(2,0,36,1) 0%, rgba(194,153,27,0.9640231092436975) 26%, rgba(0,212,255,1) 100%) no-repeat center center fixed; 
+  /*background-color: var(--color-body);*/
+  line-height: 2;
+  /* border: 5px solid red; */
+}
+
+/* global */
+a {
+  text-decoration: none;
+
+  
+ 
+}
+
+
+p,
+h2 {
+  color: var(--color-text);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  
+}
+
+.wrapper {
+  /* clamp(min, prefered, max) */
+  width: clamp(320px, 95%, 1200px);
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+}
+
+/* navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--primary-color);
+  z-index: 100;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #f3f3f3;
+}
+
+.navbar {
+  display: flex;
+  
+}
+
+
+.navbar__link {
+  color: #0f0;
+  padding: 0 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--nav-height));
+  margin-top: 60px;
+}
+
+.hero .intro {
+  flex: 1;
+}
+
+/*Menu Populares Css Jota*/
+
+.hero .intro h2 {
+ font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-align: center;
+ 
+}
+
+.hero .intro p {
+
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.about .intro h2{
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-align: center;
+}
+.about .intro p{
+  
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.services .intro h2 {
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-align: center;
+}
+.services .intro p{
+
+  font-size: 1.2rem;
+  text-align: center;
+}
+.portfolio .intro h2 {
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-align: center;
+
+}
+.portfolio .intro p{
+
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.projects .intro h2 {
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.projects .intro p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.Clients .intro h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-align: center;
+}
+.Clients .intro p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+/*Menu Populares Css Jota End*/
+
+
+.btn-cta {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+  color: #f3f3f3;
+  border-radius: 3rem;
+  margin-top: 2rem;
+}
+
+.btn-cta:hover {
+  box-shadow: 0 0 0 6px var(--btn-cta-shadow);
+}
+
+.btn-cta:active {
+  transform: scale(0.98);
+}
+
+.hero .image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*.hero .image img {
+  height: 500px;
+  width: 400px;
+}*/
+
+@media screen and (max-width: 768px) {
+  .header-wrapper {
+    padding: 0 1rem;
+  }
+
+  .hero {
+ display: grid;
+ grid-gap: 10px;
+  }
+
+  .hero .image {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero .intro {
+    padding: 1rem 2rem;
+  }
+
+  .hero .intro h1 {
+    font-size: 3rem;
+  }
+
+  .hero .image img {
+    height: 30vh;
+  }
+
+  .img {
+
+    display: flex;
+  }
+}
